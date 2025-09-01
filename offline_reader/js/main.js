@@ -212,7 +212,7 @@ function handleDownloadTopic() {
     const topicIdInput = document.getElementById('topic-id-input');
     const topicId = topicIdInput.value.trim();
 
-    if (!topicId || !/^\\d+$/.test(topicId)) {
+        if (!topicId || !/^\d+$/.test(topicId)) {
         alert('請輸入有效的主題 ID (純數字)。');
         topicIdInput.focus();
         return;
