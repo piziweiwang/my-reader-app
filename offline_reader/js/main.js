@@ -1,3 +1,4 @@
+// Version 2
 
 
 let currentTopicData = null;
@@ -191,7 +192,7 @@ function updateFontSize() {
 
 async function checkBackendStatus() {
     try {
-        const response = await fetch('http://127.0.0.1:8080/status');
+        const response = await fetch('/status');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -539,7 +540,7 @@ function renderCurrentPage(data) {
                         return;
                     }
 
-                    const response = await fetch('http://127.0.0.1:8080/chat', {
+                    const response = await fetch('/chat', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
