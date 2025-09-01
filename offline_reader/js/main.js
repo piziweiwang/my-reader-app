@@ -407,7 +407,7 @@ function renderCurrentPage(data) {
                         throw new Error('尚未提供 Gemini API 金鑰。');
                     }
 
-                    const response = await fetch('http://127.0.0.1:8080/summarize', {
+                                        const response = await fetch('/summarize', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
