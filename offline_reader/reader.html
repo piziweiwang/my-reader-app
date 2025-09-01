@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phpBB 智慧離線閱讀器</title>
+    <link rel="stylesheet" href="css/phpbb_stylesheet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>phpBB 智慧離線閱讀器</h1>
+            <p>請從線上論壇下載主題 JSON 檔案，或載入本地端已有的檔案。</p>
+            <div class="header-controls-wrapper">
+                <div class="api-key-container">
+                    <input type="password" id="gemini-api-key-input" placeholder="輸入您的 Gemini API 金鑰">
+                    <button id="save-api-key-btn">儲存金鑰</button>
+                    <span id="api-key-status"></span>
+                </div>
+                <div class="download-topic-container">
+                    <input type="text" inputmode="numeric" pattern="[0-9]*" id="topic-id-input" placeholder="輸入主題 ID">
+                    <button id="download-topic-btn">下載主題</button>
+                </div>
+                <span class="header-separator">|</span>
+                <input type="file" id="jsonFileInput" accept=".json" title="載入本地端 JSON 檔案">
+                <div id="jump-to-post-container">
+                    <input type="text" inputmode="numeric" pattern="[0-9]*" id="jump-to-post-input" placeholder="輸入樓層號">
+                    <button id="jump-to-post-btn">跳轉</button>
+                </div>
+                <button id="saveChangesBtn" style="display:none;">儲存變更</button>
+            </div>
+        </header>
+        <main id="topicContainer">
+            <h1 id="topicTitle"></h1>
+            <div id="postsContainer">
+                <!-- 文章內容將會顯示在這裡 -->
+            </div>
+            <div id="pagination-container">
+                <!-- Pagination controls will be inserted here by main.js -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Floating Controls -->
+    <div id="floating-controls">
+        <button id="font-decrease-btn" title="縮小字體">A-</button>
+        <button id="font-increase-btn" title="放大字體">A+</button>
+        <button id="toggle-ruler-btn" title="切換閱讀尺">📏</button>
+        <button id="toggle-dark-mode-btn" title="切換深色模式">🌙</button>
+        <button id="scroll-to-top-btn" title="回到頂部">↑</button>
+        <button id="scroll-to-bottom-btn" title="直達底部">↓</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/main.js?v=1.2"></script>
+</body>
+</html>
